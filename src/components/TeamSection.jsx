@@ -247,9 +247,17 @@ export default function TeamSection() {
           .team-grid {
             grid-template-columns: 1fr;
           }
+          .team-card {
+            padding: 22px 16px;
+          }
           .team-creds-banner {
             flex-direction: column;
-            align-items: flex-start;
+            align-items: stretch;
+            gap: 16px;
+            padding: 20px 16px;
+          }
+          .creds-sih-tag {
+            text-align: center;
           }
         }
       `}</style>

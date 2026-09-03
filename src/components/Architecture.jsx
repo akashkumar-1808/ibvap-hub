@@ -326,7 +326,24 @@ export default function Architecture() {
             grid-template-columns: 1fr;
           }
           .tech-docs-callout {
-            padding: 24px;
+            padding: 22px 16px;
+            width: 100%;
+          }
+          .docs-callout-cta {
+            width: 100%;
+          }
+          .docs-callout-cta .btn {
+            width: 100%;
+            justify-content: center;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .arch-node-card {
+            padding: 18px 14px;
+          }
+          .docs-callout-title {
+            font-size: 1.15rem;
           }
         }
       `}</style>

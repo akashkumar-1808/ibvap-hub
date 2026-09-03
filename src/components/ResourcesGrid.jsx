@@ -294,6 +294,16 @@ export default function ResourcesGrid() {
           .resources-grid {
             grid-template-columns: 1fr;
           }
+          .resource-card {
+            padding: 20px 16px;
+          }
+          .toast-notification {
+            width: calc(100% - 32px);
+            max-width: 380px;
+            justify-content: center;
+            padding: 10px 16px;
+            font-size: 0.8125rem;
+          }
         }
       `}</style>
     </section>

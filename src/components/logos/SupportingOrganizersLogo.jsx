@@ -41,6 +41,12 @@ export default function SupportingOrganizersLogo({ size = 36, darkTheme = false,
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
           border: 1px solid rgba(255, 255, 255, 0.2);
         }
+
+        @media (max-width: 480px) {
+          .supporting-logos-img {
+            max-height: 24px;
+          }
+        }
       `}</style>
     </div>
   );

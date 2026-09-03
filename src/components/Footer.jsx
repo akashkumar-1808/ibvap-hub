@@ -314,6 +314,28 @@ export default function Footer() {
             align-items: flex-start;
           }
         }
+
+        @media (max-width: 640px) {
+          .footer-wrapper {
+            padding-top: 48px;
+            padding-bottom: 24px;
+          }
+          .footer-logos-row {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+          }
+          .footer-logo-divider {
+            display: none;
+          }
+          .footer-bottom-bar {
+            align-items: stretch;
+          }
+          .scroll-top-btn {
+            justify-content: center;
+            width: 100%;
+          }
+        }
       `}</style>
     </footer>
   );

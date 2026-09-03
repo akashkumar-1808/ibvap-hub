@@ -314,6 +314,18 @@ export default function Comparison() {
             grid-template-columns: 1fr;
           }
         }
+
+        @media (max-width: 640px) {
+          .comparison-card {
+            padding: 22px 16px;
+          }
+          .comparison-highlight-banner {
+            padding: 20px 16px;
+          }
+          .highlight-text {
+            font-size: 1.05rem;
+          }
+        }
       `}</style>
     </section>
   );

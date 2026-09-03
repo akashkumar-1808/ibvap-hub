@@ -441,6 +441,31 @@ export default function PrototypeDisclaimerBanner() {
             padding: 24px 20px;
           }
         }
+
+        @media (max-width: 640px) {
+          .disclaimer-actions {
+            flex-direction: column;
+            width: 100%;
+          }
+          .disclaimer-actions .btn {
+            width: 100%;
+            justify-content: center;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .big-disclaimer-card {
+            padding: 18px 14px;
+          }
+          .warning-shield-box {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+          }
+          .disclaimer-card-heading {
+            font-size: 1.25rem;
+          }
+        }
       `}</style>
     </section>
   );

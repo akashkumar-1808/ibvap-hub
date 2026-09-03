@@ -458,6 +458,40 @@ export default function IntelligencePipeline() {
           .pipeline-deepdive-card {
             padding: 24px 18px;
           }
+          .stepper-controls {
+            flex-direction: column;
+            gap: 12px;
+            align-items: stretch;
+          }
+          .stepper-controls .btn {
+            width: 100%;
+            justify-content: center;
+          }
+          .step-counter-text {
+            text-align: center;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .pipeline-deepdive-card {
+            padding: 18px 14px;
+          }
+          .deepdive-title {
+            font-size: 1.25rem;
+          }
+          .node-title {
+            font-size: 0.75rem;
+          }
+          .pipeline-step-node {
+            padding: 12px 8px;
+            min-height: 125px;
+          }
+        }
+
+        @media (max-width: 360px) {
+          .flow-steps-grid {
+            grid-template-columns: 1fr;
+          }
         }
       `}</style>
     </section>

@@ -83,6 +83,21 @@ export default function MhaLogo({ size = 42, showText = true, darkTheme = false,
         .mha-dark .mha-gov {
           color: #cbd5e1;
         }
+
+        @media (max-width: 480px) {
+          .mha-logo-container {
+            gap: 8px;
+          }
+          .mha-hindi {
+            font-size: 0.75rem;
+          }
+          .mha-english {
+            font-size: 0.65rem;
+          }
+          .mha-gov {
+            font-size: 0.53125rem;
+          }
+        }
       `}</style>
     </div>
   );

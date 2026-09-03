@@ -81,29 +81,49 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Mobile Menu Backdrop & Drawer */}
       {mobileMenuOpen && (
-        <div className="mobile-menu-drawer">
-          <div className="mobile-nav-links">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="mobile-nav-link"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {link.name}
-              </a>
-            ))}
-            <a
-              href="#prototype"
-              className="btn btn-primary mobile-menu-cta"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              View Prototype →
-            </a>
+        <>
+          <div 
+            className="mobile-menu-backdrop" 
+            onClick={() => setMobileMenuOpen(false)}
+            aria-hidden="true" 
+          />
+          <div className="mobile-menu-drawer" role="dialog" aria-modal="true">
+            <div className="mobile-menu-inner">
+              <div className="mobile-ps-header">
+                <span className="navbar-ps-pill">
+                  <span className="ps-tag-label">SIH26187</span>
+                  <span className="ps-mha-tag">MHA</span>
+                </span>
+                <span className="mobile-menu-hint">Border Surveillance Intelligence</span>
+              </div>
+              <div className="mobile-nav-links">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    className="mobile-nav-link"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <span>{link.name}</span>
+                    <ChevronRight size={16} className="mobile-link-arrow" />
+                  </a>
+                ))}
+              </div>
+              <div className="mobile-drawer-footer">
+                <a
+                  href="#prototype"
+                  className="btn btn-primary mobile-menu-cta"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span>Launch Prototype</span>
+                  <ChevronRight size={16} />
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
+        </>
       )}
 
       <style>{`
@@ -283,36 +303,121 @@ export default function Navbar() {
           border-radius: 8px;
           cursor: pointer;
           color: var(--violet-deep);
+          transition: all 0.2s ease;
+        }
+
+        .mobile-toggle-btn:hover {
+          background: var(--violet-whisper);
+          border-color: var(--border-violet-strong);
+        }
+
+        .mobile-menu-backdrop {
+          position: fixed;
+          inset: 0;
+          top: var(--header-height);
+          background: rgba(15, 8, 29, 0.45);
+          backdrop-filter: blur(4px);
+          -webkit-backdrop-filter: blur(4px);
+          z-index: 998;
+          animation: fadeInBackdrop 0.2s ease-out;
         }
 
         .mobile-menu-drawer {
-          position: absolute;
+          position: fixed;
           top: var(--header-height);
           left: 0;
           right: 0;
           background: #ffffff;
-          border-bottom: 1px solid var(--border-violet);
-          box-shadow: var(--shadow-xl);
-          padding: 24px;
+          border-bottom: 2px solid var(--violet-royal);
+          box-shadow: 0 20px 30px rgba(46, 16, 101, 0.15);
+          max-height: calc(100vh - var(--header-height));
+          overflow-y: auto;
+          overflow-x: hidden;
+          z-index: 999;
+          animation: slideDownMenu 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes fadeInBackdrop {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+
+        @keyframes slideDownMenu {
+          from { 
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to { 
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .mobile-menu-inner {
+          padding: 20px 24px;
+        }
+
+        .mobile-ps-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding-bottom: 14px;
+          margin-bottom: 12px;
+          border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .mobile-menu-hint {
+          font-size: 0.71875rem;
+          color: var(--text-muted);
+          font-family: var(--font-mono);
+          text-transform: uppercase;
+          letter-spacing: 0.04em;
         }
 
         .mobile-nav-links {
           display: flex;
           flex-direction: column;
-          gap: 16px;
+          gap: 4px;
         }
 
         .mobile-nav-link {
-          font-size: 1rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-size: 0.96875rem;
           font-weight: 600;
           color: var(--text-primary);
-          padding: 8px 0;
-          border-bottom: 1px solid var(--border-subtle);
+          padding: 10px 12px;
+          border-radius: var(--radius-md);
+          transition: all 0.2s ease;
+        }
+
+        .mobile-nav-link:hover, .mobile-nav-link:active {
+          background: var(--violet-whisper);
+          color: var(--violet-royal);
+          transform: translateX(3px);
+        }
+
+        .mobile-link-arrow {
+          color: var(--violet-soft);
+          transition: transform 0.2s ease;
+        }
+
+        .mobile-nav-link:hover .mobile-link-arrow {
+          color: var(--violet-royal);
+          transform: translateX(2px);
+        }
+
+        .mobile-drawer-footer {
+          margin-top: 16px;
+          padding-top: 14px;
+          border-top: 1px solid var(--border-subtle);
         }
 
         .mobile-menu-cta {
-          margin-top: 8px;
           width: 100%;
+          justify-content: center;
+          padding: 12px 20px;
         }
 
         @media (max-width: 900px) {
@@ -323,6 +428,31 @@ export default function Navbar() {
             display: flex;
             align-items: center;
             justify-content: center;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .navbar-actions .nav-cta {
+            display: none;
+          }
+          .mobile-menu-inner {
+            padding: 16px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .navbar-ps-pill {
+            display: none;
+          }
+          .brand-title {
+            font-size: 1rem;
+          }
+          .brand-icon-box {
+            width: 34px;
+            height: 34px;
+          }
+          .brand-group-wrapper {
+            gap: 10px;
           }
         }
       `}</style>

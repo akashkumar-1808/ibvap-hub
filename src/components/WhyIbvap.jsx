@@ -261,8 +261,23 @@ export default function WhyIbvap() {
           .problem-cards-grid {
             grid-template-columns: 1fr;
           }
+          .problem-card {
+            padding: 22px 16px;
+          }
           .core-thesis-banner {
-            padding: 30px 20px;
+            padding: 28px 18px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .core-thesis-banner {
+            padding: 22px 14px;
+          }
+          .thesis-statement {
+            font-size: 1.25rem;
+          }
+          .thesis-subtext {
+            font-size: 0.875rem;
           }
         }
       `}</style>

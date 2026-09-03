@@ -412,19 +412,49 @@ export default function ProblemStatementDetails() {
 
         @media (max-width: 768px) {
           .ps-detail-card {
-            padding: 24px 20px;
+            padding: 24px 18px;
           }
           .ps-authorities-banner {
             flex-direction: column;
             gap: 16px;
-            padding: 20px;
+            padding: 18px 14px;
           }
           .ps-divider-pipe {
             display: none;
           }
           .ps-action-footer {
             flex-direction: column;
-            align-items: flex-start;
+            align-items: stretch;
+            gap: 16px;
+          }
+          .ps-footer-ctas {
+            flex-direction: column;
+            width: 100%;
+          }
+          .ps-footer-ctas .btn {
+            width: 100%;
+            justify-content: center;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .ps-detail-card {
+            padding: 18px 14px;
+          }
+          .ps-main-title {
+            font-size: 1.25rem;
+          }
+          .ps-description-block {
+            padding: 16px 14px;
+          }
+          .meta-badge-group {
+            width: 100%;
+          }
+          .ps-id-badge, .ps-theme-badge, .ps-category-badge, .ps-ministry-label {
+            font-size: 0.6875rem;
+          }
+          .deliverables-grid {
+            grid-template-columns: 1fr;
           }
         }
       `}</style>

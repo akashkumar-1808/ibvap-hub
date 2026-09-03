@@ -392,6 +392,13 @@ export default function ResearchSection() {
           .research-cards-grid {
             grid-template-columns: 1fr;
           }
+          .research-card {
+            padding: 20px 16px;
+          }
+          .filter-tab {
+            padding: 6px 12px;
+            font-size: 0.78rem;
+          }
         }
       `}</style>
     </section>

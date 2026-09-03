@@ -478,16 +478,51 @@ export const PROJECT_LINKS = {
 
         @media (max-width: 768px) {
           .prototype-hero-card {
-            padding: 36px 24px;
+            padding: 32px 20px;
           }
           .prototype-actions-cluster {
             flex-direction: column;
             align-items: stretch;
           }
+          .prototype-actions-cluster .btn {
+            width: 100%;
+            justify-content: center;
+          }
           .config-telemetry-bar {
             flex-direction: column;
             align-items: flex-start;
             gap: 12px;
+          }
+          .config-var-item {
+            flex-wrap: wrap;
+            word-break: break-all;
+          }
+          .var-code, .var-link {
+            word-break: break-all;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .prototype-hero-card {
+            padding: 22px 14px;
+          }
+          .prototype-card-heading {
+            font-size: 1.3rem;
+          }
+          .prototype-card-desc {
+            font-size: 0.9375rem;
+            margin-bottom: 24px;
+          }
+          .modal-dialog {
+            margin: 10px;
+            max-height: 90vh;
+            overflow-y: auto;
+          }
+          .modal-header {
+            padding: 16px;
+          }
+          .modal-body {
+            padding: 16px;
           }
         }
       `}</style>

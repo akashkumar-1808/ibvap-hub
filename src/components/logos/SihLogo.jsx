@@ -35,13 +35,18 @@ export default function SihLogo({ size = 44, darkTheme = false, className = '' }
           filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.06));
         }
 
-        /* When displayed on dark surfaces (such as the footer), provide a clean subtle light backdrop */
         .sih-dark-container {
           background: #ffffff;
           padding: 4px 10px;
           border-radius: 8px;
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
           border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 480px) {
+          .sih-official-logo-img {
+            max-height: 32px;
+          }
         }
       `}</style>
     </div>
