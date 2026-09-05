@@ -30,10 +30,10 @@ export default function ProjectStatus() {
     {
       phase: "PHASE 03",
       title: "Functional Prototype",
-      status: "IN DEVELOPMENT / DEMO READY",
-      statusType: "active",
-      date: "Q1 2026 (Current)",
-      summary: "Interactive demonstration console with simulated RTSP stream ingestion, dynamic bounding box tracking, zone intrusion trigger rules, and audit log generation."
+      status: "DEPLOYED & LIVE ON RENDER",
+      statusType: "completed",
+      date: "Q1 2026 (Live)",
+      summary: "Interactive demonstration console published and running live on Render cloud with simulated RTSP stream ingestion, dynamic bounding box tracking, zone intrusion trigger rules, and audit log generation."
     },
     {
       phase: "PHASE 04",

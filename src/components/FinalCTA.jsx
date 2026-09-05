@@ -25,10 +25,12 @@ export default function FinalCTA() {
 
         <div className="cta-buttons-row">
           <a
-            href="#prototype"
+            href={PROJECT_LINKS.prototype}
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn btn-primary btn-lg cta-btn-launch"
           >
-            <span>Launch Prototype</span>
+            <span>Launch Live Prototype</span>
             <ArrowRight size={18} />
           </a>
 

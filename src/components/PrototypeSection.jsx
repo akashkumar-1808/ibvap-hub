@@ -57,9 +57,9 @@ export default function PrototypeSection() {
             <div className="prototype-badge-row">
               <span className="prototype-status-pill">
                 <span className="pulse-dot"></span>
-                PROTOTYPE & DEMONSTRATION SUITE
+                LIVE PROTOTYPE ONLINE // HOSTED ON RENDER
               </span>
-              <span className="prototype-version-tag">VER: SIH-2026-CANDIDATE</span>
+              <span className="prototype-version-tag">VER: SIH-2026-LIVE</span>
             </div>
 
             <h3 className="prototype-card-heading">
@@ -75,13 +75,12 @@ export default function PrototypeSection() {
             <div className="prototype-actions-cluster">
               <a
                 href={PROJECT_LINKS.prototype}
-                onClick={(e) => handleLaunchClick(e, 'prototype')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary btn-lg launch-btn"
               >
                 <Rocket size={19} />
-                <span>Launch Prototype →</span>
+                <span>Launch Prototype Console →</span>
               </a>
 
               <a
@@ -119,7 +118,10 @@ export default function PrototypeSection() {
             <div className="config-telemetry-bar">
               <div className="config-var-item">
                 <span className="var-label">PROTOTYPE_URL:</span>
-                <code className="var-code">{PROJECT_LINKS.prototype}</code>
+                <a href={PROJECT_LINKS.prototype} target="_blank" rel="noopener noreferrer" className="var-link">
+                  {PROJECT_LINKS.prototype}
+                  <ExternalLink size={12} />
+                </a>
               </div>
               <div className="config-var-item">
                 <span className="var-label">DEMO_VIDEO_URL:</span>

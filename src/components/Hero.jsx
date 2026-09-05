@@ -11,7 +11,9 @@ import {
   Zap, 
   CheckCircle2, 
   AlertTriangle,
-  FileText
+  FileText,
+  Rocket,
+  ExternalLink
 } from 'lucide-react';
 import SihLogo from './logos/SihLogo';
 import MhaLogo from './logos/MhaLogo';
@@ -68,14 +70,20 @@ export default function Hero() {
 
           {/* Action CTAs */}
           <div className="hero-actions">
-            <a href="#prototype" className="btn btn-primary btn-lg">
-              <span>View Prototype</span>
-              <ArrowRight size={18} />
+            <a 
+              href={PROJECT_LINKS.prototype} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn btn-primary btn-lg"
+            >
+              <Rocket size={18} />
+              <span>Launch Live Prototype</span>
+              <ExternalLink size={15} />
             </a>
 
-            <a href="#demo" className="btn btn-secondary btn-lg">
-              <Play size={17} className="play-icon" />
-              <span>Watch Demo</span>
+            <a href="#prototype" className="btn btn-secondary btn-lg">
+              <Layers size={17} />
+              <span>Explore Prototype Suite</span>
             </a>
           </div>
 

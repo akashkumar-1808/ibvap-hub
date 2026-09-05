@@ -62,11 +62,13 @@ export default function Navbar() {
         {/* Right Action CTA */}
         <div className="navbar-actions">
           <a
-            href="#prototype"
+            href={PROJECT_LINKS.prototype}
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn btn-primary btn-sm nav-cta"
           >
-            <span>View Prototype</span>
-            <ChevronRight size={15} />
+            <span>Launch Prototype</span>
+            <ExternalLink size={14} />
           </a>
 
           {/* Mobile Menu Toggle */}
@@ -113,12 +115,14 @@ export default function Navbar() {
               </div>
               <div className="mobile-drawer-footer">
                 <a
-                  href="#prototype"
+                  href={PROJECT_LINKS.prototype}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn btn-primary mobile-menu-cta"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  <span>Launch Prototype</span>
-                  <ChevronRight size={16} />
+                  <span>Launch Live Console</span>
+                  <ExternalLink size={15} />
                 </a>
               </div>
             </div>

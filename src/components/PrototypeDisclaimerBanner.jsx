@@ -1,6 +1,6 @@
 import React from 'react';
 import { 
-  AlertTriangle, 
+  Rocket,
   Clock, 
   Terminal, 
   Layers, 
@@ -8,60 +8,50 @@ import {
   Radio, 
   CheckCircle,
   FileCode,
-  Sparkles
+  Sparkles,
+  ShieldCheck
 } from 'lucide-react';
 import GithubIcon from './icons/GithubIcon';
 import { PROJECT_LINKS } from '../config/links';
 
 export default function PrototypeDisclaimerBanner() {
-  const tickerText = "⚠️ NOTICE TO EVALUATORS: THE IBVAP INTERACTIVE WEB PROTOTYPE IS CURRENTLY UNDER ACTIVE DEVELOPMENT & COMPONENT INTEGRATION • UPON FINAL PIPELINE PACKAGING, IT WILL BE DEPLOYED LIVE DIRECTLY ON THIS HUB • FULL TECHNICAL ARCHITECTURE SPECIFICATIONS & OPEN SOURCE CODEBASE ARE AVAILABLE FOR AUDIT BELOW • TEAM TATVA — SIH 2026 • ";
-
   return (
     <section className="disclaimer-banner-section">
-      {/* Dynamic Red Scrolling Ticker Bar */}
-      <div className="ticker-bar-wrap" role="marquee" aria-label="Prototype Development Status Ticker">
-        <div className="ticker-content">
-          <span className="ticker-item">{tickerText}</span>
-          <span className="ticker-item">{tickerText}</span>
-          <span className="ticker-item">{tickerText}</span>
-        </div>
-      </div>
-
       <div className="container banner-container">
-        {/* Big Prominent Prototype Disclaimer Card */}
+        {/* Big Prominent Live Prototype Announcement Card */}
         <div className="big-disclaimer-card">
-          <div className="disclaimer-ambient-red"></div>
+          <div className="disclaimer-ambient-glow"></div>
           
           <div className="disclaimer-header">
             <div className="disclaimer-badge-row">
               <span className="status-live-pulse-badge">
-                <span className="pulse-red-dot"></span>
-                ACTIVE DEVELOPMENT NOTICE
+                <span className="pulse-green-dot"></span>
+                LIVE PROTOTYPE DEPLOYED
               </span>
               <span className="telemetry-badge">
-                DEPLOYMENT PIPELINE: PACKAGING IN PROGRESS
+                HOSTED ON RENDER CLOUD // CONSOLE ACTIVE
               </span>
             </div>
-            <span className="sih-id-tag">SMART INDIA HACKATHON 2026 // ADVISORY</span>
+            <span className="sih-id-tag">SMART INDIA HACKATHON 2026 // LIVE CANDIDATE</span>
           </div>
 
           <div className="disclaimer-body">
             <div className="disclaimer-icon-column">
               <div className="warning-shield-box">
-                <AlertTriangle size={34} className="warning-shield-icon" />
+                <Rocket size={32} className="warning-shield-icon" />
               </div>
             </div>
 
             <div className="disclaimer-main-text">
               <h3 className="disclaimer-card-heading">
-                IBVAP Interactive Prototype is Currently in Development
+                IBVAP Interactive Prototype is Live on Render
               </h3>
               
               <p className="disclaimer-desc">
-                The full interactive web console and real-time border analytics prototype is actively 
-                undergoing final model quantization, stream synchronization, and edge cloud deployment. 
-                <strong> Once completed, the live demonstration will be directly accessible right on this website </strong> 
-                without any change to the permanent <span className="highlight-url">IBVAP HUB</span> domain.
+                The official interactive operator console and real-time border intelligence prototype is 
+                published and accessible live on Render cloud. Control-room operators and evaluators can 
+                launch the live environment to experience simulated RTSP stream ingestion, dynamic Kalman trajectory vectors, 
+                interactive polygonal geofences, and explainable alert dispatch.
               </p>
 
               {/* Status Points Checklist */}
@@ -72,17 +62,17 @@ export default function PrototypeDisclaimerBanner() {
                   </div>
                   <div>
                     <span className="point-label">ALGORITHMIC LOGIC & FUSION</span>
-                    <span className="point-desc">6-Stage pipeline and spatial reasoning validated</span>
+                    <span className="point-desc">6-Stage pipeline and spatial reasoning fully validated</span>
                   </div>
                 </div>
 
                 <div className="status-point-item">
-                  <div className="point-icon-wrap in-progress">
-                    <Clock size={16} />
+                  <div className="point-icon-wrap ok">
+                    <CheckCircle size={16} />
                   </div>
                   <div>
-                    <span className="point-label">LIVE WEB INTERFACE & STREAMING</span>
-                    <span className="point-desc">Web client & RTSP stream deployment in progress</span>
+                    <span className="point-label">LIVE CLOUD OPERATOR CONSOLE</span>
+                    <span className="point-desc">Web console running live on Render cloud infrastructure</span>
                   </div>
                 </div>
 
@@ -99,6 +89,17 @@ export default function PrototypeDisclaimerBanner() {
 
               {/* Immediate Evaluation CTAs */}
               <div className="disclaimer-actions">
+                <a
+                  href={PROJECT_LINKS.prototype}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary disclaimer-btn-primary"
+                >
+                  <Rocket size={17} />
+                  <span>Launch Live Prototype Console →</span>
+                  <ExternalLink size={14} />
+                </a>
+
                 <a
                   href={PROJECT_LINKS.techDocs}
                   target="_blank"
@@ -120,10 +121,6 @@ export default function PrototypeDisclaimerBanner() {
                   <span>Review Code on GitHub</span>
                   <ExternalLink size={13} />
                 </a>
-
-                <a href="#prototype" className="btn btn-ghost-amber disclaimer-btn">
-                  <span>Prototype Hub Details ↓</span>
-                </a>
               </div>
             </div>
           </div>
@@ -134,56 +131,12 @@ export default function PrototypeDisclaimerBanner() {
         .disclaimer-banner-section {
           position: relative;
           background: #ffffff;
-          padding-top: 0;
-          padding-bottom: 32px;
+          padding-top: 24px;
+          padding-bottom: 36px;
           border-bottom: 1px solid var(--border-subtle);
         }
 
-        /* Continuous Red Scrolling Ticker */
-        .ticker-bar-wrap {
-          background: linear-gradient(90deg, #991b1b 0%, #b91c1c 25%, #dc2626 50%, #b91c1c 75%, #991b1b 100%);
-          color: #ffffff;
-          padding: 10px 0;
-          overflow: hidden;
-          white-space: nowrap;
-          box-shadow: 0 4px 12px rgba(185, 28, 28, 0.25);
-          border-top: 1px solid rgba(254, 202, 202, 0.3);
-          border-bottom: 1px solid rgba(254, 202, 202, 0.3);
-          margin-bottom: 40px;
-          display: flex;
-        }
-
-        .ticker-content {
-          display: inline-flex;
-          animation: tickerSlide 35s linear infinite;
-        }
-
-        .ticker-item {
-          display: inline-block;
-          font-family: var(--font-mono);
-          font-size: 0.8125rem;
-          font-weight: 700;
-          letter-spacing: 0.06em;
-          text-transform: uppercase;
-          padding-right: 48px;
-          color: #fff1f2;
-          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-        }
-
-        @keyframes tickerSlide {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-33.333%);
-          }
-        }
-
-        .ticker-bar-wrap:hover .ticker-content {
-          animation-play-state: paused;
-        }
-
-        /* Big Disclaimer Card */
+        /* Banner Container & Card */
         .banner-container {
           position: relative;
           z-index: 1;
@@ -191,22 +144,22 @@ export default function PrototypeDisclaimerBanner() {
 
         .big-disclaimer-card {
           position: relative;
-          background: linear-gradient(135deg, #1c0b24 0%, #290f33 50%, #1a0826 100%);
-          border: 2px solid #ef4444;
+          background: linear-gradient(135deg, #100726 0%, #1e0e38 50%, #12072b 100%);
+          border: 2px solid rgba(16, 185, 129, 0.45);
           border-radius: var(--radius-xl);
           padding: 36px 44px;
           color: #ffffff;
-          box-shadow: 0 16px 40px -10px rgba(220, 38, 38, 0.25), 0 0 25px rgba(239, 68, 68, 0.15);
+          box-shadow: 0 16px 40px -10px rgba(16, 185, 129, 0.15), 0 0 30px rgba(124, 58, 237, 0.15);
           overflow: hidden;
         }
 
-        .disclaimer-ambient-red {
+        .disclaimer-ambient-glow {
           position: absolute;
           top: -100px;
           right: -80px;
-          width: 450px;
-          height: 350px;
-          background: radial-gradient(circle, rgba(239, 68, 68, 0.25) 0%, transparent 70%);
+          width: 480px;
+          height: 380px;
+          background: radial-gradient(circle, rgba(16, 185, 129, 0.18) 0%, rgba(124, 58, 237, 0.2) 40%, transparent 70%);
           pointer-events: none;
         }
 
@@ -214,7 +167,7 @@ export default function PrototypeDisclaimerBanner() {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          border-bottom: 1px solid rgba(239, 68, 68, 0.3);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.12);
           padding-bottom: 18px;
           margin-bottom: 24px;
           flex-wrap: wrap;
@@ -235,39 +188,39 @@ export default function PrototypeDisclaimerBanner() {
           font-family: var(--font-mono);
           font-size: 0.75rem;
           font-weight: 700;
-          color: #fecaca;
-          background: rgba(220, 38, 38, 0.2);
-          border: 1px solid rgba(239, 68, 68, 0.6);
+          color: #a7f3d0;
+          background: rgba(16, 185, 129, 0.15);
+          border: 1px solid rgba(16, 185, 129, 0.5);
           padding: 5px 14px;
           border-radius: var(--radius-full);
           letter-spacing: 0.05em;
         }
 
-        .pulse-red-dot {
+        .pulse-green-dot {
           width: 9px;
           height: 9px;
           border-radius: 50%;
-          background: #ef4444;
-          box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.8);
-          animation: pulseRed 1.8s infinite;
+          background: #10b981;
+          box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.8);
+          animation: pulseGreen 1.8s infinite;
         }
 
-        @keyframes pulseRed {
+        @keyframes pulseGreen {
           0% {
-            box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+            box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
           }
           70% {
-            box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+            box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
           }
           100% {
-            box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+            box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
           }
         }
 
         .telemetry-badge {
           font-family: var(--font-mono);
           font-size: 0.6875rem;
-          color: #fca5a5;
+          color: #c4b5fd;
           letter-spacing: 0.05em;
         }
 
@@ -275,7 +228,7 @@ export default function PrototypeDisclaimerBanner() {
           font-family: var(--font-mono);
           font-size: 0.6875rem;
           font-weight: 600;
-          color: #f87171;
+          color: #a78bfa;
           letter-spacing: 0.08em;
         }
 
@@ -293,13 +246,13 @@ export default function PrototypeDisclaimerBanner() {
           width: 64px;
           height: 64px;
           border-radius: 16px;
-          background: rgba(220, 38, 38, 0.15);
-          border: 1px solid rgba(239, 68, 68, 0.5);
+          background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(124, 58, 237, 0.25) 100%);
+          border: 1px solid rgba(16, 185, 129, 0.5);
           display: flex;
           align-items: center;
           justify-content: center;
-          color: #f87171;
-          box-shadow: 0 0 20px rgba(220, 38, 38, 0.25);
+          color: #34d399;
+          box-shadow: 0 0 25px rgba(16, 185, 129, 0.2);
         }
 
         .disclaimer-main-text {
@@ -316,23 +269,10 @@ export default function PrototypeDisclaimerBanner() {
 
         .disclaimer-desc {
           font-size: 1.05rem;
-          color: #fecdd3;
+          color: #e2d9fc;
           line-height: 1.65;
           margin-bottom: 24px;
           max-width: 900px;
-        }
-
-        .disclaimer-desc strong {
-          color: #ffffff;
-          text-decoration: underline decoration-red-400;
-        }
-
-        .highlight-url {
-          font-family: var(--font-mono);
-          color: #fb7185;
-          background: rgba(244, 63, 94, 0.15);
-          padding: 2px 6px;
-          border-radius: 4px;
         }
 
         /* Status Points Grid */
@@ -344,8 +284,8 @@ export default function PrototypeDisclaimerBanner() {
         }
 
         .status-point-item {
-          background: rgba(255, 255, 255, 0.05);
-          border: 1px solid rgba(254, 202, 202, 0.15);
+          background: rgba(255, 255, 255, 0.06);
+          border: 1px solid rgba(255, 255, 255, 0.12);
           border-radius: var(--radius-md);
           padding: 14px 16px;
           display: flex;
@@ -370,12 +310,6 @@ export default function PrototypeDisclaimerBanner() {
           border: 1px solid rgba(52, 211, 153, 0.4);
         }
 
-        .point-icon-wrap.in-progress {
-          background: rgba(245, 158, 11, 0.2);
-          color: #fbbf24;
-          border: 1px solid rgba(251, 191, 36, 0.4);
-        }
-
         .point-label {
           display: block;
           font-family: var(--font-mono);
@@ -388,7 +322,7 @@ export default function PrototypeDisclaimerBanner() {
 
         .point-desc {
           font-size: 0.78125rem;
-          color: #fda4af;
+          color: #c4b5fd;
           line-height: 1.4;
         }
 
@@ -399,34 +333,36 @@ export default function PrototypeDisclaimerBanner() {
           flex-wrap: wrap;
         }
 
+        .disclaimer-btn-primary {
+          background: linear-gradient(135deg, #059669 0%, #10b981 50%, #2563eb 100%);
+          border-color: rgba(255, 255, 255, 0.25);
+          box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+          color: #ffffff;
+          font-weight: 700;
+          padding: 12px 24px;
+        }
+
+        .disclaimer-btn-primary:hover {
+          background: linear-gradient(135deg, #047857 0%, #059669 50%, #1d4ed8 100%);
+          box-shadow: 0 6px 24px rgba(16, 185, 129, 0.5);
+          transform: translateY(-2px);
+          color: #ffffff;
+        }
+
         .disclaimer-btn {
-          background: #ffffff;
-          color: #1c0b24;
-          border: 1px solid #ffffff;
+          background: rgba(255, 255, 255, 0.1);
+          color: #ffffff;
+          border: 1px solid rgba(255, 255, 255, 0.2);
           font-weight: 600;
-          padding: 10px 18px;
+          padding: 11px 20px;
           font-size: 0.875rem;
         }
 
         .disclaimer-btn:hover {
-          background: #fee2e2;
-          border-color: #fca5a5;
-          color: #991b1b;
-        }
-
-        .btn-ghost-amber {
-          background: rgba(239, 68, 68, 0.15);
-          color: #fecaca;
-          border: 1px solid rgba(239, 68, 68, 0.4);
-          padding: 10px 18px;
-          font-size: 0.875rem;
-          border-radius: var(--radius-md);
-        }
-
-        .btn-ghost-amber:hover {
-          background: rgba(239, 68, 68, 0.3);
+          background: rgba(255, 255, 255, 0.18);
+          border-color: rgba(255, 255, 255, 0.35);
           color: #ffffff;
-          border-color: #ef4444;
+          transform: translateY(-1px);
         }
 
         @media (max-width: 900px) {

@@ -7,7 +7,7 @@
 
 export const PROJECT_LINKS = {
   // Prototype & Demonstration URLs (Update when hosted)
-  prototype: "PROTOTYPE_URL", // Placeholder for interactive live prototype
+  prototype: "https://ibvap-sih-2026.onrender.com/console/", // Live interactive prototype hosted on Render
   demo: "DEMO_VIDEO_URL",       // Placeholder for recorded video demonstration
   ppt: "PPT_URL",               // Placeholder for SIH Presentation Deck
 
